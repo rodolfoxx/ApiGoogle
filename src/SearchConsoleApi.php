@@ -31,7 +31,7 @@ class SearchConsoleApi extends Google_Service_Webmasters {
   private $scopes;
   private $connectionInitTime = 0;
 
-  const WEBMASTERS_ROW_LIMIT = 0;
+  const WEBMASTERS_ROW_LIMIT = 5000;
 
   /**
    * SearchConsoleApi constructor.
@@ -113,13 +113,7 @@ class SearchConsoleApi extends Google_Service_Webmasters {
     $this->initNewConnection();
     $this->setQueryOptions($options);
 
-    // Start a timer.
-    $start = microtime(TRUE);
-
-    // do {
-    //   $request_count++;
      $result="";
-      // Ask Google for data.
       try {
         $result = $this->searchanalytics->query($options['site_url'], $this->query);
       }
@@ -130,11 +124,7 @@ class SearchConsoleApi extends Google_Service_Webmasters {
       
       $rows = $result->getRows();
 
-      $row_count += count($rows);
-
-  echo "aqui";
-
-  //print_r($rows);
+    return json_encode($rows,true);
   }
 
 }
