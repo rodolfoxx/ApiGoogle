@@ -1,16 +1,17 @@
 {
     "name": "rodolfo/google",
     "require": {
-	
        "google/apiclient": "^2.2"
-    },
-    "require-dev": {
-        "google/apiclient": "^2.2"
     },
     "authors": [
         {
             "name": "rodolfo",
             "email": "p5mur_z@hotmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "rodolfo\\Apigoogle\\": "src/"
+        }
+    }  
 }
