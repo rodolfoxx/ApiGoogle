@@ -1,7 +1,8 @@
 {
     "name": "rodolfo/google",
     "require": {
-        "google/apiclient": "\"phpunit/phpunit\": \"^7.5\""
+	
+       "google/apiclient": "^2.2"
     },
     "require-dev": {
         "google/apiclient": "^2.2"
