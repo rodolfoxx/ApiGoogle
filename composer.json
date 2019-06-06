@@ -1,0 +1,15 @@
+{
+    "name": "rodolfo/google",
+    "require": {
+        "google/apiclient": "\"phpunit/phpunit\": \"^7.5\""
+    },
+    "require-dev": {
+        "google/apiclient": "^2.2"
+    },
+    "authors": [
+        {
+            "name": "rodolfo",
+            "email": "p5mur_z@hotmail.com"
+        }
+    ]
+}
