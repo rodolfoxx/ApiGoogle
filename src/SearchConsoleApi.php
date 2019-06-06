@@ -1,6 +1,6 @@
 <?php
 
-namespace rodolfo\google;
+namespace rodolfo\Apigoogle;
 
 /**
  * @file
