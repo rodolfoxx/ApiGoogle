@@ -31,7 +31,7 @@ class SearchConsoleApi extends Google_Service_Webmasters {
   private $scopes;
   private $connectionInitTime = 0;
 
-  const WEBMASTERS_ROW_LIMIT = 5000;
+  const WEBMASTERS_ROW_LIMIT = 25000;
 
   /**
    * SearchConsoleApi constructor.
