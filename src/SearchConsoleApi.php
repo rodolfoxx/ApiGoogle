@@ -104,27 +104,27 @@ class SearchConsoleApi extends Google_Service_Webmasters {
    * @param array $options
    * @return array
    */
+   */
   public function getRows($options) {
-    $data = [];
-    $items = [];
-    $row_count = 0;
-    $request_count = 0;
 
     $this->initNewConnection();
     $this->setQueryOptions($options);
 
      $result="";
+     $error="";
       try {
         $result = $this->searchanalytics->query($options['site_url'], $this->query);
       }
       catch (\Google_Service_Exception $e) {
-       var_dump($e->getMessage());
-        
+       $error=$e->getMessage();   
       }
       
-      $rows = $result->getRows();
-
-    return json_encode($rows,true);
-  }
-
+      if (empty($error)){
+        $rows = $result->getRows();
+        return json_encode($rows,true);
+      }else{
+        $rows ="";
+        return json_encode($rows,true);
+      }
+    
 }
