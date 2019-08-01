@@ -119,6 +119,7 @@ class SearchConsoleApi extends Google_Service_Webmasters {
        $error=$e->getMessage();   
       }
       
+      try {
       if (empty($error)){
         $rows = $result->getRows();
         return json_encode($rows,true);
@@ -126,5 +127,9 @@ class SearchConsoleApi extends Google_Service_Webmasters {
         $rows ="";
         return json_encode($rows,true);
       }
+         } catch (\Exception $e) {
+          return "Error";
+      }
+   
     
 }
