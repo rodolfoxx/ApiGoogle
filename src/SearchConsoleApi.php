@@ -118,7 +118,7 @@ class SearchConsoleApi extends Google_Service_Webmasters {
       catch (\Google_Service_Exception $e) {
        $error=$e->getMessage();   
       }
-      
+ 
 	  
 	    try{
          if (empty($error)){
