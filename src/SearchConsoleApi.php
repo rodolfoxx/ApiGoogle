@@ -118,17 +118,18 @@ class SearchConsoleApi extends Google_Service_Webmasters {
       catch (\Google_Service_Exception $e) {
        $error=$e->getMessage();   
       }
-      try {
-      if (empty($error)){
-        $rows = $result->getRows();
-        return json_encode($rows,true);
-      }else{
-        $rows ="";
-        return json_encode($rows,true);
-      }
-        } catch (\Exception $e) {
-         $rows="Error";
-         return json_encode($rows,true);
-   }
+ 
+	  
+	    try{
+         if (empty($error)){
+           $rows = $result->getRows();
+           return json_encode($rows,true);
+		   }else{   
+			 return "";
+		   }
+          }catch (\Exception $e) {  
+		   return "Error";
+	      } 
     
+	
 }
